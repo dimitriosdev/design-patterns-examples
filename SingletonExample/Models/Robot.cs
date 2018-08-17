@@ -1,18 +1,15 @@
-﻿namespace SingletonExample.Models
+﻿using System;
+
+namespace SingletonExample.Models
 {
-    public class Robot
+    public sealed class Robot
     {
-        private static Robot self;
+        private static readonly Lazy<Robot> lazy = new Lazy<Robot>(() => new Robot());
         private string name;
-        private Robot() {}
+        
+        public static Robot Instance { get { return lazy.Value; } }
 
-        public static Robot Instance()
-        {
-            if (self == null)
-                self = new Robot();
-            return self;
-        }
-
+        private Robot() { }
         public string Name
         {
             get { return name; }

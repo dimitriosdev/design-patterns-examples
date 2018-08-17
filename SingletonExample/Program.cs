@@ -7,8 +7,8 @@ namespace SingletonExample
     {
         static void Main(string[] args)
         {
-            Robot a = Robot.Instance();
-            Robot b = Robot.Instance();
+            Robot a = Robot.Instance;
+            Robot b = Robot.Instance;
             a.Name = "Dimi";
 
             
