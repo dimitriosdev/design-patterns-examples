@@ -2,6 +2,9 @@
 
 namespace SingletonExample.Models
 {
+    /// <summary>
+    /// The code implicitly uses LazyThreadSafetyMode.ExecutionAndPublication as the thread safety mode for the Lazy<Robot>. 
+    /// </summary>
     public sealed class Robot
     {
         private static readonly Lazy<Robot> lazy = new Lazy<Robot>(() => new Robot());
